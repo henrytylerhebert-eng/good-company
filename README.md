@@ -23,7 +23,7 @@ npm run build
 
 ## GitHub Pages
 
-Pushes to `main` publish automatically through `.github/workflows/deploy-pages.yml`. The production Vite build uses the `/good-company/` base path required by project Pages sites.
+Pushes to `main` publish automatically through `.github/workflows/deploy-pages.yml`. The Pages build uses the `/good-company/` base path required by project Pages sites.
 
 ## V0.1 boundary
 
