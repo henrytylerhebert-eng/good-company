@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "id": "GC-CASE-001",
+    "title": "The Dashboard Nobody Needed",
+    "subtitle": "A Good Company flagship case",
+    "version": "0.1",
+    "fictional": true,
+    "purpose": "Teach the Good Company operating pattern through a realistic AI-assisted product decision.",
+    "audience": [
+      "Founders",
+      "Product leaders",
+      "AI-forward teams",
+      "AI builders"
+    ],
+    "canonical_decision": "reframe_pilot",
+    "canonical_outcome": "queue_pilot",
+    "dgt": {
+      "digital": "All evidence, claims, decisions, approvals, artifacts, outcomes, and learning are represented as persistent objects.",
+      "governed": "Colleague responsibilities, authority, reviews, and human approvals remain explicit.",
+      "trustworthy": "Material claims expose sources, confidence, contradictions, and verification status."
+    }
+  },
+  "organization": {
+    "name": "Northline",
+    "description": "A fictional B2B SaaS company that helps service businesses manage customer onboarding and retention.",
+    "human_owner": {
+      "name": "Avery",
+      "role": "Founder and Product Owner",
+      "authority": [
+        "Defines intent",
+        "Approves material assumptions",
+        "Accepts consequential risk",
+        "Authorizes the product decision",
+        "Approves canonical learning"
+      ]
+    },
+    "trigger": "An investor demonstration is ten days away.",
+    "initial_request": "Build a customer health dashboard with red-yellow-green scores, trend charts, filters, and export before Friday.",
+    "stated_goal": "Show investors that Northline can help customers reduce churn.",
+    "actual_user": "Customer Success Manager",
+    "actual_job": "Identify which accounts need attention now, understand why, and decide what to investigate next."
+  },
+  "characters": [
+    {
+      "id": "mira",
+      "name": "Mira",
+      "role": "Cognitive Product Architect",
+      "protects": "The human problem",
+      "core_question": "What are we actually trying to change?",
+      "accent": "#0E5A5A",
+      "status": "available"
+    },
+    {
+      "id": "echo",
+      "name": "Echo",
+      "role": "Evidence & Learning Steward",
+      "protects": "What the Company knows",
+      "core_question": "What supports that\u2014and what happened next?",
+      "accent": "#9A6B13",
+      "status": "available"
+    },
+    {
+      "id": "rook",
+      "name": "Rook",
+      "role": "Independent Product Critic",
+      "protects": "The Company from its own confidence",
+      "core_question": "What are we assuming?",
+      "accent": "#7D2B2B",
+      "status": "available"
+    },
+    {
+      "id": "atlas",
+      "name": "Atlas",
+      "role": "Systems Architect",
+      "protects": "Structural integrity",
+      "core_question": "What has to be true for this to work reliably?",
+      "accent": "#245A7A",
+      "status": "available"
+    },
+    {
+      "id": "forge",
+      "name": "Forge",
+      "role": "Implementation Lead",
+      "protects": "Execution",
+      "core_question": "What exactly are we building?",
+      "accent": "#5A4474",
+      "status": "available"
+    },
+    {
+      "id": "nexus",
+      "name": "Nexus",
+      "role": "Team Coordinator",
+      "protects": "Coordinated responsibility",
+      "core_question": "Who needs to be in the room next?",
+      "accent": "#4B6B32",
+      "status": "available"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E-01",
+      "title": "Investor note",
+      "type": "Primary communication",
+      "source": "Email from lead investor to Avery",
+      "quality": "High",
+      "summary": "The investor asked Northline to demonstrate how the product helps teams identify retention risk and take timely action. The note did not request a dashboard.",
+      "supports": [
+        "The desired outcome is risk identification and action, not a specific interface."
+      ],
+      "contradicts": [
+        "Investors require a dashboard."
+      ],
+      "observability": "Observed"
+    },
+    {
+      "id": "E-02",
+      "title": "Customer-success interviews",
+      "type": "Qualitative research",
+      "source": "Six interviews across four customer organizations",
+      "quality": "Moderate",
+      "summary": "All six CSMs described daily triage across usage data, CRM notes, renewal dates, and support history. Five said they rarely open the existing dashboard. Four asked for an explanation of why an account was flagged.",
+      "supports": [
+        "The recurring job is triage.",
+        "Explanations may matter more than additional charts.",
+        "The existing dashboard is not the primary working surface."
+      ],
+      "contradicts": [
+        "More dashboard views will automatically improve adoption."
+      ],
+      "observability": "Observed"
+    },
+    {
+      "id": "E-03",
+      "title": "Product-usage log",
+      "type": "Behavioral data",
+      "source": "Twelve-week product analytics snapshot",
+      "quality": "High",
+      "summary": "Fourteen percent of active CSMs opened the current health dashboard in a typical week. Fifty-two percent opened alert emails, but many returned to other systems to verify the alert.",
+      "supports": [
+        "Users respond to exceptions more often than dashboards.",
+        "Current alerts lack sufficient context."
+      ],
+      "contradicts": [
+        "The dashboard is the primary way CSMs monitor risk."
+      ],
+      "observability": "Observed"
+    },
+    {
+      "id": "E-04",
+      "title": "Support-ticket language",
+      "type": "Voice of customer",
+      "source": "Thirty-one relevant support tickets from the previous quarter",
+      "quality": "Moderate",
+      "summary": "Recurring phrases included 'Which accounts changed?', 'Why is this customer marked at risk?', and 'What should I look at first?' Seven tickets used the word dashboard.",
+      "supports": [
+        "The desired progress is prioritization and explanation.",
+        "Users use decision language more often than interface language."
+      ],
+      "contradicts": [
+        "Dashboard is the dominant customer vocabulary."
+      ],
+      "observability": "Observed"
+    },
+    {
+      "id": "E-05",
+      "title": "Health-score audit",
+      "type": "Data and model audit",
+      "source": "Internal review by Echo and Atlas",
+      "quality": "High",
+      "summary": "The health score used undocumented weights. Renewal dates were missing for eighteen percent of accounts. Missing data was sometimes treated as a negative signal rather than an inability to observe.",
+      "supports": [
+        "The current score should not be presented as an unquestioned fact.",
+        "Insufficient data requires a separate system state."
+      ],
+      "contradicts": [
+        "Red-yellow-green status is reliable enough to drive action."
+      ],
+      "observability": "Observed"
+    },
+    {
+      "id": "E-06",
+      "title": "Internal product assumption",
+      "type": "Assumption record",
+      "source": "Planning note repeated in three internal conversations",
+      "quality": "Unsupported",
+      "summary": "The team believed investors expected a dashboard because dashboards are common in SaaS demonstrations. No direct source supported the belief.",
+      "supports": [],
+      "contradicts": [],
+      "observability": "Assumption"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-01",
+      "text": "Customer-success teams need a faster way to identify accounts requiring attention.",
+      "confidence": "Strong support",
+      "evidence": [
+        "E-02",
+        "E-03",
+        "E-04"
+      ]
+    },
+    {
+      "id": "C-02",
+      "text": "A dashboard is the correct product form.",
+      "confidence": "Weak support",
+      "evidence": [
+        "E-06"
+      ],
+      "contradictions": [
+        "E-02",
+        "E-03",
+        "E-04"
+      ]
+    },
+    {
+      "id": "C-03",
+      "text": "Users need to understand the evidence behind a risk signal.",
+      "confidence": "Moderate support",
+      "evidence": [
+        "E-02",
+        "E-03",
+        "E-04"
+      ]
+    },
+    {
+      "id": "C-04",
+      "text": "The existing health score is sufficiently trustworthy to drive action.",
+      "confidence": "Evidence against",
+      "evidence": [
+        "E-05"
+      ]
+    },
+    {
+      "id": "C-05",
+      "text": "Automatic next-action recommendations will improve follow-through.",
+      "confidence": "Unproven",
+      "evidence": []
+    }
+  ],
+  "decision_options": [
+    {
+      "id": "dashboard",
+      "label": "Build the full dashboard",
+      "summary": "Implement the original request before the investor demonstration.",
+      "evidence_fit": "Low",
+      "risk": "High rework risk",
+      "time": "Six build days",
+      "learning": "Weak",
+      "canonical": false,
+      "preview": "A polished interface may be completed quickly, but the current evidence does not show that it improves the CSM's decision."
+    },
+    {
+      "id": "research",
+      "label": "Research longer",
+      "summary": "Pause implementation until a larger discovery study is complete.",
+      "evidence_fit": "Moderate",
+      "risk": "Low product risk; high timing cost",
+      "time": "Three to six weeks",
+      "learning": "Moderate",
+      "canonical": false,
+      "preview": "This reduces premature commitment but misses the opportunity to learn from a bounded pilot before the deadline."
+    },
+    {
+      "id": "reframe_pilot",
+      "label": "Reframe as an Attention Queue pilot",
+      "summary": "Build the smallest product that helps eight CSMs identify accounts needing review and inspect the evidence behind each signal.",
+      "evidence_fit": "High",
+      "risk": "Bounded",
+      "time": "Four build days",
+      "learning": "High",
+      "canonical": true,
+      "preview": "This directly tests the supported job while preserving human judgment and exposing uncertainty."
+    },
+    {
+      "id": "reject",
+      "label": "Reject the initiative",
+      "summary": "Do not build anything.",
+      "evidence_fit": "Low",
+      "risk": "Pain remains unresolved",
+      "time": "No build time",
+      "learning": "Low",
+      "canonical": false,
+      "preview": "The dashboard request is weak, but the underlying customer problem has credible support."
+    }
+  ],
+  "approved_decision": {
+    "id": "D-01",
+    "state": "Build",
+    "selection": "reframe_pilot",
+    "name": "Account Attention Queue pilot",
+    "human_approval": "Avery",
+    "scope": [
+      "Show accounts that require review rather than every account.",
+      "Expose the signal, source, change, confidence, and data freshness.",
+      "Separate risk, stable, and insufficient-data states.",
+      "Allow a CSM to mark reviewed, investigate, or defer.",
+      "Keep any next-action suggestion clearly experimental.",
+      "Do not automatically contact a customer or change an account status."
+    ],
+    "prohibited_assumptions": [
+      "Missing data means low health.",
+      "A risk score is a fact.",
+      "The investor requires a dashboard.",
+      "Suggested actions may be executed without human review."
+    ],
+    "success_conditions": [
+      "A pilot CSM can identify the accounts needing review in under fifteen minutes.",
+      "Every flag links to inspectable evidence.",
+      "Insufficient data is visible as its own state.",
+      "No external action occurs without human authorization.",
+      "The pilot captures use, triage time, evidence inspection, overrides, and feedback."
+    ]
+  },
+  "build_plan": {
+    "entities": [
+      "Account",
+      "Signal",
+      "EvidenceRecord",
+      "Confidence",
+      "AttentionItem",
+      "Owner",
+      "ReviewStatus",
+      "OutcomeRecord"
+    ],
+    "states": [
+      "Needs review",
+      "Stable",
+      "Insufficient data",
+      "Reviewed",
+      "Deferred",
+      "Resolved"
+    ],
+    "workflows": [
+      "Ingest authorized account signals.",
+      "Evaluate data availability before risk.",
+      "Create an attention item when a supported exception exists.",
+      "Link each item to evidence and confidence.",
+      "Route the item to the account owner.",
+      "Require a human decision before external action.",
+      "Capture disposition and eventual outcome."
+    ],
+    "technical_acceptance": [
+      "Missing source data produces 'Insufficient data,' not 'At risk.'",
+      "Every attention item includes source, timestamp, and confidence.",
+      "Conflicting signals remain visible.",
+      "No automated customer outreach exists in the pilot.",
+      "All user decisions are recorded."
+    ],
+    "cognitive_acceptance": [
+      "A CSM can explain why an account appears.",
+      "A CSM can distinguish evidence from recommendation.",
+      "The interface does not require remembering information from another screen.",
+      "The next valid action is visible.",
+      "Uncertainty is communicated without false precision."
+    ]
+  },
+  "predictions": [
+    {
+      "id": "P-01",
+      "text": "The Attention Queue will reduce median daily triage time.",
+      "expected": "Below fifteen minutes",
+      "result": "Supported"
+    },
+    {
+      "id": "P-02",
+      "text": "Evidence links will be used when CSMs evaluate a flag.",
+      "expected": "Opened for at least half of flagged accounts",
+      "result": "Supported"
+    },
+    {
+      "id": "P-03",
+      "text": "Suggested next actions will improve follow-through.",
+      "expected": "Accepted for at least half of reviewed accounts",
+      "result": "Weakened"
+    },
+    {
+      "id": "P-04",
+      "text": "Separating insufficient data will reduce false risk interpretation.",
+      "expected": "No missing-data account displayed as confirmed risk",
+      "result": "Partially supported"
+    }
+  ],
+  "outcome": {
+    "period": "Six-week pilot",
+    "participants": "Eight Customer Success Managers",
+    "metrics": [
+      {
+        "label": "Weekly active use",
+        "value": "7 of 8 pilot CSMs",
+        "interpretation": "Strong adoption signal within the small pilot."
+      },
+      {
+        "label": "Median triage time",
+        "value": "31 minutes \u2192 12 minutes",
+        "interpretation": "P-01 supported."
+      },
+      {
+        "label": "Evidence-trail opens",
+        "value": "64% of flagged-account reviews",
+        "interpretation": "P-02 supported."
+      },
+      {
+        "label": "Suggested-action acceptance",
+        "value": "19%",
+        "interpretation": "P-03 weakened; suggestions were often described as generic."
+      },
+      {
+        "label": "Missing-data errors",
+        "value": "2 accounts initially misclassified",
+        "interpretation": "P-04 only partially supported; Atlas added stricter observability checks."
+      }
+    ],
+    "qualitative": [
+      "CSMs described the queue as 'a place to start' rather than another report.",
+      "Users valued seeing why an account appeared.",
+      "Users preferred choosing the next action themselves.",
+      "The pilot revealed that data availability needed to be modeled before risk."
+    ],
+    "correction": "Atlas added a mandatory observability check and a separate Insufficient data state before any risk state can be assigned.",
+    "canonical_learning": "In Northline's eight-person pilot, exception-based triage reduced time-to-priority and produced stronger weekly use than the existing dashboard. Evidence links were frequently inspected. Automatic next-action recommendations did not yet demonstrate value. These findings are limited to the pilot context and should not be generalized to all dashboards or customer-success teams."
+  },
+  "alternate_outcomes": {
+    "dashboard": {
+      "headline": "The dashboard shipped. The decision did not improve.",
+      "details": [
+        "The investor demonstration looked polished.",
+        "Two of eight pilot CSMs opened the dashboard during the following month.",
+        "The team still relied on spreadsheets and CRM notes for triage.",
+        "Six build days were followed by four rework days."
+      ],
+      "lesson": "Execution quality could not compensate for an unsupported product form."
+    },
+    "research": {
+      "headline": "The team learned more, but learned too late for the immediate decision.",
+      "details": [
+        "The larger study confirmed the triage problem.",
+        "No working pilot existed for the investor demonstration.",
+        "The team lost the chance to compare behavior before and after a bounded change."
+      ],
+      "lesson": "Additional research can be valid without being the highest-learning next step."
+    },
+    "reject": {
+      "headline": "The dashboard was rejected, but the customer problem remained.",
+      "details": [
+        "No unnecessary product was built.",
+        "CSMs continued spending time across multiple systems.",
+        "The team failed to distinguish rejecting a proposed solution from rejecting the underlying job."
+      ],
+      "lesson": "A weak solution does not invalidate a supported problem."
+    }
+  },
+  "learning_choices": [
+    {
+      "id": "too_broad",
+      "text": "Dashboards are bad and should be replaced by queues.",
+      "quality": "Unsupported generalization"
+    },
+    {
+      "id": "canonical",
+      "text": "In Northline's eight-person pilot, exception-based triage improved speed and weekly use; evidence links were valuable; automatic next-action recommendations remain unproven.",
+      "quality": "Calibrated canonical update"
+    },
+    {
+      "id": "too_weak",
+      "text": "The pilot went well.",
+      "quality": "Too vague to guide future work"
+    }
+  ]
+}
